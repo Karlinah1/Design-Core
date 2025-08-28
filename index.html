@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Buku Online</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    /* Header */
+    header {
+      background-color: #28a745;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 14px;
+      opacity: 0.9;
+    }
+
+    /* Navigation */
+    nav {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Search + Cart */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .search-box input {
+      padding: 6px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .cart {
+      background: white;
+      color: #28a745;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Container Grid */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      background: #fff;
+      border-radius: 8px;
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: absolute;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+
+    .product-title {
+      font-size: 18px;
+      margin: 10px 0 5px;
+    }
+
+    /* Harga */
+    .product-price {
+      font-size: 16px;
+      color: #e63946;
+      font-weight: bold;
+    }
+
+    .product-description {
+      font-size: 14px;
+      color: #555;
+      margin: 10px 0;
+      text-align: justify;
+      flex-grow: 1;
+    }
+
+    /* Harga + Tombol */
+    .price-buy {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .buy-button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    .buy-button:hover {
+      background-color: #218838;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .product-title {
+        font-size: 16px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+      }
+      nav {
+        margin: 10px 0;
+      }
+      nav a {
+        display: inline-block;
+        margin: 5px 8px;
+      }
+      header h1 {
+        font-size: 18px;
+      }
+      header p {
+        font-size: 12px;
+      }
+      .container {
+        grid-template-columns: 1fr;
+      }
+      .product-title {
+        font-size: 14px;
+      }
+      .product-description {
+        display: none;
+      }
+      .price-buy {
+        flex-direction: column;
+        gap: 6px;
+      }
+      .buy-button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div>
+      <h1>Toko Buku Design Core</h1>
+      <p>Temukan koleksi novel fantasi terbaik</p>
+    </div>
+
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Produk</a>
+      <a href="#">Kontak</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="search-box">
+        <input type="text" placeholder="Cari buku...">
+      </div>
+      <div class="cart">🛒 0</div>
+    </div>
+  </header>
+
+  <!-- Produk -->
+  <div class="container">
+    <div class="product">
+      <img src="images/bumi.jpeg" alt="Buku 1">
+      <h2 class="product-title">Bumi</h2>
+      <p class="product-description">Buku Bumi karya Tere Liye adalah novel fantasi pertama dari serial Bumi, menceritakan petualangan Raib, seorang remaja perempuan yang bisa menghilang, bersama teman-temannya Seli yang bisa memunculkan petir, dan Ali yang jenius, yang menemukan dunia paralel bernama Klan Bulan. Mereka menjelajahi dunia itu dan menghadapi berbagai tantangan, termasuk rencana jahat Tamus yang ingin menguasai dunia.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 85.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/bulan.jpeg" alt="Buku 2">
+      <h2 class="product-title">Bulan</h2>
+      <p class="product-description">Buku Bulan karya Tere Liye adalah novel fantasi fiksi ilmiah yang bergenre petualangan, merupakan buku kedua dari Serial Bumi, melanjutkan kisah Raib, Seli, dan Ali di dunia paralel. Dalam buku ini, ketiga remaja tersebut melakukan perjalanan ke Klan Matahari untuk berdiplomasi, namun justru terlibat dalam Festival Bunga Matahari yang penuh misteri dan bahaya.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 90.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/matahari.jpeg" alt="Buku 3">
+      <h2 class="product-title">Matahari</h2>
+      <p class="product-description">Buku Matahari karya Tere Liye adalah novel fantasi petualangan remaja yang melanjutkan kisah Raib, Seli, dan Ali dari serial Bumi. Dalam buku ini, petualangan ketiga sahabat itu berlanjut dengan rasa penasaran Ali yang membawa mereka ke Klan Bintang. Di sana, mereka menemukan fakta penting tentang ancaman yang akan menghancurkan klan permukaan.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 95.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/bintang.jpeg" alt="Buku 4">
+      <h2 class="product-title">Bintang</h2>
+      <p class="product-description">Buku Bintang karya Tere Liye adalah novel keempat dari serial Bumi, yang mengisahkan petualangan tiga remaja SMA Raib, Seli, dan Ali di dunia paralel dan Klan Bintang yang canggih secara teknologi. Kisah ini berfokus pada misi mereka untuk menyelesaikan masalah di pusat bumi dan menyelamatkan klan-klan dari kehancuran.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 100.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/ceros_dan_batozar.jpeg" alt="Buku 5">
+      <h2 class="product-title">Ceros dan Batozar</h2>
+      <p class="product-description">Buku Ceros dan Batozar karya Tere Liye adalah novel fantasi bagian dari serial Bumi, yang berlatar di dunia paralel dan menceritakan tentang petualangan tiga sahabat: Raib, Seli, dan Ali. Buku ini dibagi dua bagian, yaitu Ceros dan Batozar, yang terpisah namun saling berkaitan dengan konflik yang lebih besar.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 105.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="images/komet.jpeg" alt="Buku 6">
+      <h2 class="product-title">Komet</h2>
+      <p class="product-description">Buku Komet adalah novel fiksi ilmiah fantasi karya Tere Liye, kelanjutan dari serial Bumi, yang menceritakan petualangan ketiga sahabat, Raib, Seli, dan Ali, di klan Komet untuk menghadapi Si Tanpa Mahkota. Buku ini menonjolkan perkembangan karakter, alur cerita menegangkan, dan pesan moral tentang persahabatan dan pengorbanan.</p>
+      <div class="price-buy">
+        <p class="product-price">Rp 110.000</p>
+        <button class="buy-button">Beli</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
